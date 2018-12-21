@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ab5fef93443f08862358"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "50193a2fc8fb9c00bff2"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -9061,10 +9061,10 @@ d3.csv("./data/grouped_bills.csv").then(function (data) {
         return resetFilter('state');
     });
     d3.select('#reset-all').on("click", function () {
-        return resetFilter();
+        (0, _barbuttons.reset_buttons)(allValuesFilter, colorPalette), resetFilter();
     });
     d3.select('#discover').on("click", function () {
-        return (0, _discovery.discover_function)(true, initialFilter);
+        (0, _barbuttons.reset_buttons)(allValuesFilter, colorPalette), (0, _discovery.discover_function)(true, initialFilter);
     });
     _mapplot.uStatePaths.forEach(function (element) {
         statesIDsToNames[element['id']] = element['n'];
@@ -10668,6 +10668,7 @@ function computeLogRange(min, max) {
         var logmin = Math.log(min);
         var logmax = Math.log(max);
         var d = (logmax - logmin) / 6;
+        console.log(logmin, logmax, d);
         return [Math.round(Math.exp(logmin)), Math.round(Math.exp(logmin + 1 * d)), Math.round(Math.exp(logmin + 2 * d)), Math.round(Math.exp(logmin + 3 * d)), Math.round(Math.exp(logmin + 4 * d)), Math.round(Math.exp(logmin + 5 * d)), Math.round(Math.exp(logmax))];
     } else if (linInc >= 3) {
         var _logmin = Math.log(min);
@@ -14139,7 +14140,7 @@ exports = module.exports = __webpack_require__(888)(false);
 
 
 // module
-exports.push([module.i, ".html\r\n/* Loading fonts */\r\n\r\n@font-face {\r\n    font-family: 'BarlowSemiCondensed';\r\n    src: url(" + escape(__webpack_require__(1319)) + ") format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n}\r\n\r\n\r\n@font-face {\r\n    font-family: 'BarlowSemiCondensed';\r\n    src: url(" + escape(__webpack_require__(1320)) + ") format('truetype');\r\n    font-weight: bold;\r\n    font-style: normal;\r\n}\r\n\r\n@font-face {\r\n    font-family: 'BarlowSemiCondensed';\r\n    src: url(" + escape(__webpack_require__(1318)) + ") format('truetype');\r\n    font-weight: lighter;\r\n    font-style: normal;\r\n}\r\n\r\n\r\nbody {\r\n    font-family: 'BarlowSemiCondensed';\r\n    position: absolute;\r\n    margin: 0px;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #f5f5f5;\r\n}\r\n\r\nh1 {\r\n  text-align: center;\r\n}\r\n\r\nh3 {\r\n  text-align: center;\r\n}\r\n\r\ntd {\r\n  vertical-align: top;\r\n  position: relative;\r\n}\r\n\r\ntable {\r\n  table-layout: auto;\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n}\r\n\r\nimg {\r\n  margin-left: 50px; \r\n  margin-top: 0px;\r\n  margin-bottom: 0px;\r\n  width : 80px;\r\n  height: 100px;\r\n}\r\n\r\nelement.style {\r\n  position: relative;\r\n}\r\n\r\ndiv {\r\n  display: block;\r\n}\r\n\r\nul {\r\n\r\n  position: absolute;\r\n  height: 70%;\r\n  left: 0px;\r\n  right: 20px;\r\n  overflow-y: scroll;\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0px solid #ccc;\r\n  background: #f5f5f5;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n\r\nli {\r\n  padding: 10px 20px;\r\n  border-bottom: 1px solid #ccc;\r\n  background: #f5f5f5;\r\n\r\n}\r\nli:nth-child(odd) { background: #dcdcdc; }\r\n\r\nli:hover {\r\n  opacity: 0.9;\r\n}\r\n\r\n#list-bills{\r\n  height: 70%;\r\n}\r\n\r\nh4{\r\n    margin: 0px;\r\n    margin-top: 0px;\r\n    text-align: left;\r\n}\r\n\r\nhr { \r\n  display: block;\r\n  margin-top: 0.5em;\r\n  margin-bottom: 0.5em;\r\n  margin-left: 0px;\r\n  margin-right: auto;\r\n  border-style: inset;\r\n  border-width: 1px;\r\n  width: 200px;\r\n  align: left;\r\n  align-content: left;\r\n}\r\n\r\n\r\n/*.bar-plot {\r\n  width :500px !important;\r\n  height:300px !important;\r\n  margin: 100px;\r\n}*/\r\n\r\n.first_element{\r\n    margin-top: 5px;\r\n    margin-bottom: 0px; \r\n}\r\n.table_right{\r\n    margin: 0px;\r\n}\r\n.heading_right{\r\n    margin: 10px;\r\n}\r\n.president_label{\r\n    width: 420px;\r\n    margin: 0px;\r\n}\r\n.congress_info{\r\n    margin: 0px;\r\n    margin-top: 0px;\r\n    text-align: left;\r\n}\r\n#senate_info{\r\n    margin-top: 10px;\r\n}\r\n.clear {\r\n  clear: both;\r\n}\r\n\r\n.table-container {\r\n  position: relative;\r\n  max-width: 800px;\r\n  width: 800px;\r\n  height: 100%;\r\n  margin: auto;\r\n}\r\n\r\n.majors-plot {\r\n  margin-left: 5px;\r\n  width: 300px;\r\n  height: 800px;\r\n  max-width: 400px;\r\n  min-height: 800px;\r\n  font-weight: bold;\r\n}\r\n\r\n.surround-evolution {\r\n  margin: 0px;\r\n  margin-top: 20px;\r\n  width: 800px;\r\n  height : 250px;\r\n  min-width: 500px;\r\n  max-width: 1000px;\r\n  max-height: 250px;\r\n  float: left;\r\n  padding-left: 30px;\r\n}\r\n\r\n/*CSS popups*/\r\n\r\n.popup{\r\n    position:absolute;\r\n    background:rgba(0,0,0,0.5);\r\n    border-radius: 5px;\r\n    color:#FFF;\r\n    padding:5px;\r\n    cursor: default;\r\n    z-index:9999;\r\n}\r\n.popup:hover{\r\n    opacity:0.5;\r\n}\r\n\r\n.discover-text{\r\n    font-weight: bold;\r\n}\r\n.state{\r\n  stroke: #333333;\r\n}\r\n\r\n.svg-container {\r\n  display: inline-block;\r\n  position: relative;\r\n  width: 100%;\r\n  padding-bottom: 100%;\r\n  vertical-align: middle;\r\n  float: left;\r\n  overflow: hidden;\r\n}\r\n\r\n.svg-content {\r\n  display: inline-block;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n}\r\n\r\n\r\n\r\n#tooltip {\r\n  position: absolute;\r\n  text-align: center;\r\n  padding: 20px;\r\n  margin: 10px;\r\n  font: 12px sans-serif;\r\n  background: lightsteelblue;\r\n  border: 1px;\r\n  border-radius: 2px;\r\n  pointer-events: none;\r\n  z-index: 1;\r\n}\r\n\r\n#tooltip h4{\r\n  margin: 0;\r\n  font-size: 14px;\r\n}\r\n\r\n#tooltip{\r\n  background: rgba(0,0,0,0.9);\r\n  border: 1px orange;\r\n  border-radius: 5px;\r\n  font-size: 12px;\r\n  width: 80px;\r\n  padding: 4px;\r\n  color: white;\r\n  opacity: 0;\r\n}\r\n\r\n#tooltip table{\r\n  table-layout: fixed;\r\n}\r\n\r\n#tooltip tr td{\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\n#tooltip tr td:nth-child(1){\r\n  width:50px;\r\n}\r\n\r\n#tooltip tr td:nth-child(2){\r\n  text-align:center;\r\n}\r\n\r\n.section_map{\r\n  position:relative;\r\n  vertical-align: left;\r\n  margin: 0;\r\n  z-index: 0;\r\n  float: left;\r\n}\r\n\r\n.top_row{\r\n  margin:0;\r\n}\r\n\r\n/* Caption + Toolbox*/\r\n\r\n.viz-caption {\r\n  position: relative;\r\n  float: left;\r\n  text-align: center;\r\n  margin-top: 5px;\r\n  font-size: 25pt;\r\n  font-weight: bold;\r\n  padding-left: 300px;\r\n  color: white;\r\n}\r\n\r\n.toolbox {\r\n  position: relative;\r\n  float: right;\r\n}\r\n.toolbox-party {\r\n  position: relative;\r\n  float: left;\r\n}\r\n\r\n.tool-but {\r\n  position: relative;\r\n  float: left;\r\n  color: #FFF;\r\n  border: none;\r\n  background-color: #808080;\r\n  outline: none;\r\n  margin-right: 10px;\r\n  height: 25pt;\r\n  margin-top: 8px;\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n  border-radius: 0;\r\n}\r\n\r\nbutton.tool-but:hover{\r\n  opacity: 0.8;\r\n}\r\n.top-row{\r\n  background-color: #222;\r\n  border-color: #080808;\r\n}\r\n\r\nbutton.left{\r\n  background-color: #222;\r\n  outline: none;\r\n  font-weight: bold;\r\n  margin-top: 12px;\r\n  font-size: 11pt;\r\n\r\n\r\n}\r\n\r\nbutton.red{\r\n  color: #cb181d;\r\n}\r\n\r\nbutton.blue{\r\n  color: #2171b5;\r\n}\r\n\r\nbutton.green{\r\n  color: #238b45;\r\n}\r\n\r\nbutton.red:hover{\r\n  background-color: #cb181d;\r\n  color: black;\r\n  font-weight: bold;\r\n}\r\n\r\nbutton.blue:hover {\r\n  background-color: #2171b5;\r\n  color: black;\r\n  font-weight: bold;\r\n}\r\n\r\nbutton.green:hover{\r\n  background-color: #238b45;\r\n  color: black;\r\n  font-weight: bold;\r\n}\r\n/*\r\nbutton.red:focus{\r\n  background-color: #cb181d;\r\n  color: white;\r\n}\r\n\r\nbutton.blue:focus{\r\n  background-color: #2171b5;\r\n  color: white;\r\n}\r\n\r\nbutton.green:focus{\r\n  background-color: #238b45;\r\n  color: white;\r\n}*/\r\n\r\n.label{\r\n  text-align: center;\r\n  margin-top: 2px;\r\n  margin-right: 1px;\r\n  height:30px;\r\n  position: relative;\r\n}\r\n\r\n#major-label{\r\n  margin-top: 10px;\r\n  text-align: center;\r\n  font-weight: bold;\r\n}\r\n\r\n#evolution-label{\r\n  margin-top: 10px;\r\n  margin-bottom: 0;\r\n  text-align: center;\r\n}\r\n\r\n#map-label{\r\n  margin-top: 10px;\r\n  margin-bottom: 0;\r\n  text-align: center;\r\n}\r\n\r\n#story-image{\r\n  width: 80%;\r\n  height: auto;\r\n  display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  margin-top: 20px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n#congress-prev{\r\n  text-align: right;\r\n}\r\n/* Table container */\r\n\r\n.table-container {\r\n  position: absolute;\r\n  max-width: 100%;\r\n  min-width: 100%;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\n#president_image {\r\n    width: 100px;\r\n    height: 100px;\r\n}\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, ".html\r\n/* Loading fonts */\r\n\r\n@font-face {\r\n    font-family: 'BarlowSemiCondensed';\r\n    src: url(" + escape(__webpack_require__(1319)) + ") format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n}\r\n\r\n\r\n@font-face {\r\n    font-family: 'BarlowSemiCondensed';\r\n    src: url(" + escape(__webpack_require__(1320)) + ") format('truetype');\r\n    font-weight: bold;\r\n    font-style: normal;\r\n}\r\n\r\n@font-face {\r\n    font-family: 'BarlowSemiCondensed';\r\n    src: url(" + escape(__webpack_require__(1318)) + ") format('truetype');\r\n    font-weight: lighter;\r\n    font-style: normal;\r\n}\r\n\r\n\r\nbody {\r\n    font-family: 'BarlowSemiCondensed';\r\n    position: absolute;\r\n    margin: 0px;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #f5f5f5;\r\n}\r\n\r\nh1 {\r\n  text-align: center;\r\n}\r\n\r\nh3 {\r\n  text-align: center;\r\n}\r\n\r\ntd {\r\n  vertical-align: top;\r\n  position: relative;\r\n}\r\n\r\ntable {\r\n  table-layout: auto;\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n}\r\n\r\nimg {\r\n  margin-left: 50px; \r\n  margin-top: 0px;\r\n  margin-bottom: 0px;\r\n  width : 80px;\r\n  height: 100px;\r\n}\r\n\r\nelement.style {\r\n  position: relative;\r\n}\r\n\r\ndiv {\r\n  display: block;\r\n}\r\n\r\nul {\r\n\r\n  position: absolute;\r\n  height: 70%;\r\n  left: 0px;\r\n  right: 20px;\r\n  overflow-y: scroll;\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0px solid #ccc;\r\n  background: #f5f5f5;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n\r\nli {\r\n  padding: 10px 20px;\r\n  border-bottom: 1px solid #ccc;\r\n  background: #f5f5f5;\r\n\r\n}\r\nli:nth-child(odd) { background: #dcdcdc; }\r\n\r\nli:hover {\r\n  opacity: 0.9;\r\n}\r\n\r\n#list-bills{\r\n  height: 70%;\r\n}\r\n\r\nh4{\r\n    margin: 0px;\r\n    margin-top: 0px;\r\n    text-align: left;\r\n}\r\n\r\nhr { \r\n  display: block;\r\n  margin-top: 0.5em;\r\n  margin-bottom: 0.5em;\r\n  margin-left: 0px;\r\n  margin-right: auto;\r\n  border-style: inset;\r\n  border-width: 1px;\r\n  width: 200px;\r\n  align: left;\r\n  align-content: left;\r\n}\r\n\r\n\r\n/*.bar-plot {\r\n  width :500px !important;\r\n  height:300px !important;\r\n  margin: 100px;\r\n}*/\r\n\r\n.first_element{\r\n    margin-top: 5px;\r\n    margin-bottom: 0px; \r\n}\r\n.table_right{\r\n    margin: 0px;\r\n}\r\n.heading_right{\r\n    margin: 10px;\r\n}\r\n.president_label{\r\n    width: 420px;\r\n    margin: 0px;\r\n}\r\n.congress_info{\r\n    margin: 0px;\r\n    margin-top: 0px;\r\n    text-align: left;\r\n}\r\n#senate_info{\r\n    margin-top: 10px;\r\n}\r\n.clear {\r\n  clear: both;\r\n}\r\n\r\n.table-container {\r\n  position: relative;\r\n  max-width: 800px;\r\n  width: 800px;\r\n  height: 100%;\r\n  margin: auto;\r\n}\r\n\r\n.majors-plot {\r\n  margin-left: 5px;\r\n  width: 300px;\r\n  height: 600px;\r\n  max-width: 400px;\r\n  min-height: 600px;\r\n  font-weight: bold;\r\n}\r\n\r\n.surround-evolution {\r\n  margin: 0px;\r\n  margin-top: 20px;\r\n  width: 800px;\r\n  height : 250px;\r\n  min-width: 500px;\r\n  max-width: 1000px;\r\n  max-height: 250px;\r\n  float: left;\r\n  padding-left: 30px;\r\n}\r\n\r\n/*CSS popups*/\r\n\r\n.popup{\r\n    position:absolute;\r\n    background:rgba(0,0,0,0.5);\r\n    border-radius: 5px;\r\n    color:#FFF;\r\n    padding:5px;\r\n    cursor: default;\r\n    z-index:9999;\r\n}\r\n.popup:hover{\r\n    opacity:0.5;\r\n}\r\n\r\n.discover-text{\r\n    font-weight: bold;\r\n}\r\n.state{\r\n  stroke: #333333;\r\n}\r\n\r\n.svg-container {\r\n  display: inline-block;\r\n  position: relative;\r\n  width: 100%;\r\n  padding-bottom: 100%;\r\n  vertical-align: middle;\r\n  float: left;\r\n  overflow: hidden;\r\n}\r\n\r\n.svg-content {\r\n  display: inline-block;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n}\r\n\r\n\r\n\r\n#tooltip {\r\n  position: absolute;\r\n  text-align: center;\r\n  padding: 20px;\r\n  margin: 10px;\r\n  font: 12px sans-serif;\r\n  background: lightsteelblue;\r\n  border: 1px;\r\n  border-radius: 2px;\r\n  pointer-events: none;\r\n  z-index: 1;\r\n}\r\n\r\n#tooltip h4{\r\n  margin: 0;\r\n  font-size: 14px;\r\n}\r\n\r\n#tooltip{\r\n  background: rgba(0,0,0,0.9);\r\n  border: 1px orange;\r\n  border-radius: 5px;\r\n  font-size: 12px;\r\n  width: 80px;\r\n  padding: 4px;\r\n  color: white;\r\n  opacity: 0;\r\n}\r\n\r\n#tooltip table{\r\n  table-layout: fixed;\r\n}\r\n\r\n#tooltip tr td{\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\n#tooltip tr td:nth-child(1){\r\n  width:50px;\r\n}\r\n\r\n#tooltip tr td:nth-child(2){\r\n  text-align:center;\r\n}\r\n\r\n.section_map{\r\n  position:relative;\r\n  vertical-align: left;\r\n  margin: 0;\r\n  z-index: 0;\r\n  float: left;\r\n}\r\n\r\n.top_row{\r\n  margin:0;\r\n}\r\n\r\n/* Caption + Toolbox*/\r\n\r\n.viz-caption {\r\n  position: relative;\r\n  float: left;\r\n  text-align: center;\r\n  margin-top: 5px;\r\n  font-size: 25pt;\r\n  font-weight: bold;\r\n  padding-left: 300px;\r\n  color: white;\r\n}\r\n\r\n.toolbox {\r\n  position: relative;\r\n  float: right;\r\n}\r\n.toolbox-party {\r\n  position: relative;\r\n  float: left;\r\n}\r\n\r\n.tool-but {\r\n  position: relative;\r\n  float: left;\r\n  color: #FFF;\r\n  border: none;\r\n  background-color: #808080;\r\n  outline: none;\r\n  margin-right: 10px;\r\n  height: 25pt;\r\n  margin-top: 8px;\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n  border-radius: 0;\r\n}\r\n\r\nbutton.tool-but:hover{\r\n  opacity: 0.8;\r\n}\r\n.top-row{\r\n  background-color: #222;\r\n  border-color: #080808;\r\n}\r\n\r\nbutton.left{\r\n  background-color: #222;\r\n  outline: none;\r\n  font-weight: bold;\r\n  margin-top: 12px;\r\n  font-size: 11pt;\r\n\r\n\r\n}\r\n\r\nbutton.red{\r\n  color: #cb181d;\r\n}\r\n\r\nbutton.blue{\r\n  color: #2171b5;\r\n}\r\n\r\nbutton.green{\r\n  color: #238b45;\r\n}\r\n\r\nbutton.red:hover{\r\n  background-color: #cb181d;\r\n  color: white !important;\r\n  font-weight: bold;\r\n}\r\n\r\nbutton.blue:hover {\r\n  background-color: #2171b5;\r\n  color: white !important;\r\n  font-weight: bold;\r\n}\r\n\r\nbutton.green:hover{\r\n  background-color: #238b45;\r\n  color: white !important;\r\n  font-weight: bold;\r\n}\r\n/*\r\nbutton.red:focus{\r\n  background-color: #cb181d;\r\n  color: white;\r\n}\r\n\r\nbutton.blue:focus{\r\n  background-color: #2171b5;\r\n  color: white;\r\n}\r\n\r\nbutton.green:focus{\r\n  background-color: #238b45;\r\n  color: white;\r\n}*/\r\n\r\n.label{\r\n  text-align: center;\r\n  margin-top: 2px;\r\n  margin-right: 1px;\r\n  height:30px;\r\n  position: relative;\r\n}\r\n\r\n#major-label{\r\n  margin-top: 10px;\r\n  text-align: center;\r\n  font-weight: bold;\r\n}\r\n\r\n#evolution-label{\r\n  margin-top: 10px;\r\n  margin-bottom: 0;\r\n  text-align: center;\r\n}\r\n\r\n#map-label{\r\n  margin-top: 10px;\r\n  margin-bottom: 0;\r\n  text-align: center;\r\n}\r\n\r\n#story-image{\r\n  width: 80%;\r\n  height: auto;\r\n  display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  margin-top: 20px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n#congress-prev{\r\n  text-align: right;\r\n}\r\n/* Table container */\r\n\r\n.table-container {\r\n  position: absolute;\r\n  max-width: 100%;\r\n  min-width: 100%;\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\n#president_image {\r\n    width: 100px;\r\n    height: 100px;\r\n}\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -37676,6 +37677,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.drawPartyLinks = drawPartyLinks;
+exports.reset_buttons = reset_buttons;
 
 var _d = __webpack_require__(76);
 
@@ -37689,6 +37691,16 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 // Plotting functions
 //////////////////////////////////////////////////////////
 
+var buttonStatus = {
+    D: false,
+    R: false,
+    I: false
+};
+var text_colors = {
+    D: "#2171b5",
+    R: "#cb181d",
+    I: "#238b45"
+};
 function drawPartyLinks(allValuesFilter, colorPalette) {
     d3.select('#party-D').on("click", function () {
         return onclickPartyLink('D', colorPalette.D_palette.partyIcon, allValuesFilter);
@@ -37712,17 +37724,38 @@ function drawPartyLinks(allValuesFilter, colorPalette) {
 //////////////////////////////////////////////////////////
 
 function onclickPartyLink(partyId, onclickColor, allValuesFilter) {
-    (0, _main.changeFilterField)('party', partyId);
-    document.getElementById('party-' + partyId).style.backgroundColor = onclickColor;
-    document.getElementById('party-' + partyId).style.color = 'white';
+    if (buttonStatus[partyId] == false) {
+        buttonStatus[partyId] = true;
+        (0, _main.changeFilterField)('party', partyId);
+        document.getElementById('party-' + partyId).style.backgroundColor = onclickColor;
+        document.getElementById('party-' + partyId).style.color = 'white';
+        allValuesFilter.party.forEach(function (p) {
+            if (p != partyId) {
+                buttonStatus[p] = false;
+                var otherParty = document.getElementById('party-' + p);
+                otherParty.style.color = text_colors[p];
+                otherParty.style.backgroundColor = '';
+            }
+        });
+    } else {
+        buttonStatus[partyId] = false;
+        (0, _main.changeFilterField)('party', partyId, true);
+        document.getElementById('party-' + partyId).style.backgroundColor = '';
+        document.getElementById('party-' + partyId).style.color = text_colors[partyId];
+        //reset 
+    }
+}
 
-    allValuesFilter.party.forEach(function (p) {
-        if (p != partyId) {
-            var otherParty = document.getElementById('party-' + p);
-            //otherParty.style.color = ;
-            otherParty.style.backgroundColor = '';
-        }
-    });
+function reset_buttons(allValuesFilter, colorPalette) {
+    if (buttonStatus['D'] == true) {
+        onclickPartyLink('D', colorPalette.D_palette.partyIcon, allValuesFilter);
+    }
+    if (buttonStatus['R'] == true) {
+        onclickPartyLink('R', colorPalette.R_palette.partyIcon, allValuesFilter);
+    }
+    if (buttonStatus['I'] == true) {
+        onclickPartyLink('I', colorPalette.I_palette.partyIcon, allValuesFilter);
+    }
 }
 
 /***/ }),
@@ -38259,7 +38292,7 @@ function discover_function() {
             // Popups disappear after 8s or when the user clicks on them  
             popupNode.style('top', y + 'px').style('left', x + 'px').style('opacity', '0.0').on('click', function (e) {
                 d3.select(this).remove();
-            }).transition().duration(1000).style('opacity', '1').transition().delay(8000).transition().duration(1000).style('opacity', 0).on('end', function (e) {
+            }).transition().duration(1000).style('opacity', '1').transition().delay(3000).transition().duration(1000).style('opacity', 0).on('end', function (e) {
                 d3.select(this).remove();
             });
         });
@@ -38452,6 +38485,7 @@ function rescaleGradients(dataDf, filter) {
         maxMinVals_state_min -= 0.5;
         (0, _main.set_maxMinVals_state)(maxMinVals_state_min, null);
     }
+    console.log(maxMinVals_state_min, maxMinVals_state_max);
     (0, _main.setColorPaletteGradient)("none_color", (0, _utils.wind_gray_palette)(maxMinVals_state_min, maxMinVals_state_max));
     if (filter.party.length == 1) {
         (0, _main.setColorPaletteGradient)(filter.party[0], wind[filter.party[0]](maxMinVals_state_min, maxMinVals_state_max));
@@ -79516,7 +79550,7 @@ module.exports = InfoReceiver;
 module.exports = global.location || {
   origin: 'http://lumosan.github.io/USSenate-dataViz:80'
 , protocol: 'http'
-, host: 'lumosan.github.io/USSenate-dataViz'
+, host: 'localhost'
 , port: 80
 , href: 'http://lumosan.github.io/USSenate-dataViz/'
 , hash: ''

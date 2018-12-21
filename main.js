@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 import * as _ from 'underscore';
 import DataFrame from 'dataframe-js';
 
-import {drawPartyLinks} from './barbuttons.js'
+import {drawPartyLinks,reset_buttons} from './barbuttons.js'
 import {drawCongressPlot, drawMajorPlot, yearToCongress} from './barplots.js'
 import {discover_function} from './discovery.js';
 import {drawMapPlot, uStatePaths} from './mapplot.js';
@@ -68,6 +68,7 @@ let filter = {
     major: [],
     status: [],
 };
+
 
 
 let discoverStoryNumber = 0;
@@ -319,8 +320,8 @@ d3.csv("./data/grouped_bills.csv")
         d3.select('#toggle-passed').on("click", () => togglePassed());
         d3.select('#reset-parties').on("click", () => resetFilter('party'));
         d3.select('#reset-states').on("click", () => resetFilter('state'));
-        d3.select('#reset-all').on("click", () => resetFilter());
-        d3.select('#discover').on("click", () => discover_function(true, initialFilter));
+        d3.select('#reset-all').on("click", () => {reset_buttons(allValuesFilter,colorPalette),resetFilter()});
+        d3.select('#discover').on("click", () => {reset_buttons(allValuesFilter,colorPalette),discover_function(true, initialFilter)});
         uStatePaths.forEach(function(element) {
             statesIDsToNames[element['id']] = element['n']
         });
