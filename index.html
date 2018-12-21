@@ -10,30 +10,30 @@
 </head>
 
 <body>
-    
+
     <table class='table-container'>
         <tbody>
-            <tr bgcolor="gray" class="top-row" margi>
-                <td colspan=5>
+            <tr class="top-row" margi>
+                <td colspan=3>
                     <div class="toolbox-party">
-                        <button class="tool-but" id="svg-R">Republican</button>
-                        <button class="tool-but" id="svg-D">Democrats</button>
-                        <button class="tool-but" id="svg-I">Independents</button>
-                    </div>  
-                    <div class="viz_caption">
-                        Bills introduced in US Congress
+                        <button class="tool-but red left" id="party-R">Republican</button>
+                        <button class="tool-but blue left" id="party-D">Democrats</button>
+                        <button class="tool-but green left" id="party-I">Independent</button>
+                    </div>
+
+                    <div class="viz-caption">
+                        Bills in US Congress
                     </div>
 
                     <div class="toolbox">
+                        <button class="tool-but" id="toggle-passed">Showing all bills</button>
                         <button class="tool-but" id="discover">Discover</button>
-                        <button class="tool-but" id="reset-filter">Reset</button>
+                        <button class="tool-but" id="reset-all">Reset</button>
                     </div>
-                    <div class="clear"></div>
+
                     <div id="discover_text">
                         &nbsp;
                     </div>
-                    <div>
-
                 </td>
             </tr>
 
@@ -41,8 +41,8 @@
 
             <tr>
                 <td rowspan="2" >
-                    <div class=label id=major-label>
-                    <h5 class=label>All Subjects Selected</h5>
+                    <div class=label>
+                        <h5 id=major-label class=label>All policy areas selected</h5>
                     </div>
                     <div class='majors-plot'>
 
@@ -50,40 +50,80 @@
                         </canvas>
                     </div>
                 </td>
-                <td colspan="3">
-
+                <td colspan="1">
+                    <div class=label>
+                        <h5 class=label id=evolution-label>Congress selected</h5>
+                    </div>
                     <div class='surround-evolution'>
-                        <canvas class="bar-plot" id="evolution_chart">
+                        <canvas id="evolution_chart">
                         </canvas>
                     </div>
                 </td>
 
                 <td rowspan="3">
-                    <div class=president_label>
-                        <p>
-                        What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-
-                        </p>
+                    <div class="president_label" width="900" >
+                        <h3 class='heading_right'>Selected Congress Information</h3>
+                        <table class='table_right'>
+                            <tr>
+                                <td rowspan="4">
+                                    <div class="first_element" id="president_image">
+                                    </div>
+                                </td>
+                                <td>
+                                <td>
+                                    <div class="first_element" id="president_name"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    <div id="president_party"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    <hr>
+                                    <h4 class='congress_info' id="senate_info">SENATE: </h2>
+                                </td> 
+                            </tr>
+                            </tr> 
+                                <td>
+                                </td>
+                                <td>
+                                    <h4 class='congress_info' id="house_info">HOUSE: </h2>
+                                </td>
+                            </tr> 
+                        </table>
+                        <h3 id="discover-title"></h3>
+                        <p id="discover-text"></p>
                     </div>
-                    
+                    <div>
+                        <h3 class='heading_right' id='bills_list_heading'>Bills Currently Selected</h3>
+
+                    </div>
+                    <div id="list-bills" >
+                    </div>
+
                 </td>
             </tr>
             <tr>
                 <!-- <td></td> -->
-                
-                <td colspan="3">
-                    <div class="label" id="map-label" >
-                        <h5 class=label>All States Selected </h5>
+
+                <td colspan="1">
+                    <div class="label">
+                        <h5 class=label id="map-label">All states selected </h5>
                     </div>
                     <div class='section_map'>
                         <svg width="800" height="350"  version="1.1" viewBox="150 0 760 600" id="statesvg" margin="0px" ></svg>
                     </div>
                 </td>
- 
-               
+
+
             </tr>
-            
+
         </tbody>
     </table>
     <div class='section_barchart'>
