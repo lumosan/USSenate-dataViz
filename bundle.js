@@ -37469,7 +37469,7 @@ function reloadApp() {
   }
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, "?http://localhost:8080"))
+/* WEBPACK VAR INJECTION */}.call(exports, "?http://lumosan.github.io/USSenate-dataViz:8080"))
 
 /***/ }),
 /* 557 */
@@ -79514,11 +79514,11 @@ module.exports = InfoReceiver;
 'use strict';
 
 module.exports = global.location || {
-  origin: 'http://localhost:80'
+  origin: 'http://lumosan.github.io/USSenate-dataViz:80'
 , protocol: 'http'
-, host: 'localhost'
+, host: 'lumosan.github.io/USSenate-dataViz'
 , port: 80
-, href: 'http://localhost/'
+, href: 'http://lumosan.github.io/USSenate-dataViz/'
 , hash: ''
 };
 
